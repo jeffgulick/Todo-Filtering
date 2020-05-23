@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="filter.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+  <header>
+    <button onclick="fetchTodos()">Fetch Todos</button>
+    <button onclick="logTodos()">Log Todos</button>
+    <button onclick="populateTodos()">Populate Todos</button>
+    <button onclick="filter()">Sort by User Id</button>
+    <label for="text">input value:</label>
+    <input type="text" id="userId" placeholder="enter id">
+  </header>  
+  <ol id="todo-list">
+   <!-- LIs will go here -->
+ </ol>
+</body>
+</html>
