@@ -18,6 +18,7 @@ const fetchTodos = () => {
   const populateTodos = () => {
 
     remove();
+
     //gets the ol element
     const element = document.getElementById("todo-list")
 
@@ -55,21 +56,14 @@ const fetchTodos = () => {
   remove();//removes li ele
 
   const newElement = document.getElementById("todo-list")
-
+//getting user input
   const newId = document.getElementById("userId").value;//gets value from user
-
-
+//filtering array and creating new array
   const filtered = arrayOfTodos.filter(value => value.userId == newId);
-
-  console.log(filtered);
-  // item.innerHTML = filtered[newId].title;
-  // newElement.appendChild(item)
-
     
   for(i=0; i <= 19; i++){
-    let PooPoo =  document.createElement("LI");// creates li element and assigns to var item//
-     PooPoo.innerHTML = filtered[i].title;
-
+    let PooPoo =  document.createElement("LI");// creates li every cycle
+     PooPoo.innerHTML = filtered[i].title; //putting content into li//
       PooPoo.append(' ');
       PooPoo.append(filtered[i].userId);
       PooPoo.append(' ');
