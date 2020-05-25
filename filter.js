@@ -49,13 +49,43 @@ const fetchTodos = () => {
   }
 
   const filter = (element) => {
-    const id = document.getElementById("userId").value;
-    console.log(id);
 
-//Removes created list elements
+    remove();//removes li ele
+
+    const newElement = document.getElementById("todo-list")
+    item =  document.createElement("LI");// creates li element and assigns to var item//
+
+    const newId = document.getElementById("userId").value;//gets value from user
+
+
+   const filtered = arrayOfTodos.filter(value => value.userId == newId );
+
+   console.log(filtered[0].title);
+    
+
+    // for(i=0;i<=199;i++){
+
+    //   if(arrayOfTodos[i].userId == newId){
+    //     item.innerHTML = arrayOfTodos[i].title;
+    //     item.append(' ');
+    //     item.append(arrayOfTodos[i].userId);
+    //     item.append(' ');
+    //     item.append(arrayOfTodos[i].id);
+    //     item.append(' ');
+
+    //     newElement.appendChild(item);
+
+  
+    //   }
+      
+    //   }
+      }
+    
+    
+
+
+  const remove = () => {
+    //Removes created list elements
     $("li").remove();
 
-    const elementFilter = document.getElementById("todo-list")
-    let itemFilter =  document.createElement("LI");// creates li element and assigns to var item//
-
-    }
+  }
