@@ -1,0 +1,35 @@
+/* master styles */
+body {
+    margin: 0pt;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "header"
+    "list";
+    justify-content: center;
+}
+
+header {
+    grid-area: header;
+    justify-self: center;
+    display: flex;
+    margin-top: 10pt;
+}
+
+ol {
+    justify-self: center;
+    grid-area: list;
+}
+
+button {
+    justify-content: space-between;
+}
+/* ol {
+    display: flex;
+    flex-direction: column;
+} */
+
+/* .blue {
+    color: blue;
+} */

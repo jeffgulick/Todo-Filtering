@@ -63,18 +63,64 @@ const fetchTodos = () => {
     
   for(i=0; i <= 19; i++){
     let PooPoo =  document.createElement("LI");// creates li every cycle
-     PooPoo.innerHTML = filtered[i].title; //putting content into li//
-      PooPoo.append(' ');
-      PooPoo.append(filtered[i].userId);
-      PooPoo.append(' ');
-      PooPoo.append(filtered[i].id);
-      PooPoo.append(' ');
-      PooPoo.append(filtered[i].completed);
-      newElement.appendChild(PooPoo);
+    PooPoo.innerHTML = filtered[i].title; //putting content into li//
+    PooPoo.append(' ');
+    PooPoo.append(filtered[i].userId);
+    PooPoo.append(' ');
+    PooPoo.append(filtered[i].id);
+    PooPoo.append(' ');
+    PooPoo.append(filtered[i].completed);
+    newElement.appendChild(PooPoo);
    } 
     
 }
+
+const completeOrNot = () => {
+  remove();
+  
+  const compElement = document.getElementById("todo-list");
+  const done = arrayOfTodos.filter(value => value.completed == true);
+  console.log(done[0].completed);
+
+  for(i=0;i <=199;i++){
+    let yes = document.createElement("LI");
+    yes.innerHTML = done[i].title;
+    yes.append(' ');
+    yes.append(done[i].userId);
+    yes.append(' ');
+    yes.append(done[i].id);
+    yes.append(' ');
+    yes.append(done[i].completed); 
+    compElement.appendChild(yes);
+
+  }
+}
+
+const completeOrNotNo = () => {
+  remove();
+  
+  const compElementNo = document.getElementById("todo-list");
+  const Notdone = arrayOfTodos.filter(value => value.completed == false);
+  console.log(Notdone[0].completed);
+
+  for(i=0;i <=199;i++){
+    let no = document.createElement("LI");
+    no.innerHTML = Notdone[i].title;
+    no.append(' ');
+    no.append(Notdone[i].userId);
+    no.append(' ');
+    no.append(Notdone[i].id);
+    no.append(' ');
+    no.append(Notdone[i].completed); 
+    compElementNo.appendChild(no);
+
+
+}
+}
+
+
 const remove = () => {
   //Removes created list elements
   $("li").remove();
 }
+
