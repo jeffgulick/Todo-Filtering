@@ -16,6 +16,8 @@ const fetchTodos = () => {
 
   //func that populates fecth titles and inserts them in html list item
   const populateTodos = () => {
+
+    remove();
     //gets the ol element
     const element = document.getElementById("todo-list")
 
@@ -50,42 +52,35 @@ const fetchTodos = () => {
 
   const filter = (element) => {
 
-    remove();//removes li ele
+  remove();//removes li ele
 
-    const newElement = document.getElementById("todo-list")
-    item =  document.createElement("LI");// creates li element and assigns to var item//
+  const newElement = document.getElementById("todo-list")
 
-    const newId = document.getElementById("userId").value;//gets value from user
+  const newId = document.getElementById("userId").value;//gets value from user
 
 
-   const filtered = arrayOfTodos.filter(value => value.userId == newId );
+  const filtered = arrayOfTodos.filter(value => value.userId == newId);
 
-   console.log(filtered[0].title);
+  console.log(filtered);
+  // item.innerHTML = filtered[newId].title;
+  // newElement.appendChild(item)
+
     
+  for(i=0; i <= 19; i++){
+    let PooPoo =  document.createElement("LI");// creates li element and assigns to var item//
+     PooPoo.innerHTML = filtered[i].title;
 
-    // for(i=0;i<=199;i++){
-
-    //   if(arrayOfTodos[i].userId == newId){
-    //     item.innerHTML = arrayOfTodos[i].title;
-    //     item.append(' ');
-    //     item.append(arrayOfTodos[i].userId);
-    //     item.append(' ');
-    //     item.append(arrayOfTodos[i].id);
-    //     item.append(' ');
-
-    //     newElement.appendChild(item);
-
-  
-    //   }
-      
-    //   }
-      }
+      PooPoo.append(' ');
+      PooPoo.append(filtered[i].userId);
+      PooPoo.append(' ');
+      PooPoo.append(filtered[i].id);
+      PooPoo.append(' ');
+      PooPoo.append(filtered[i].completed);
+      newElement.appendChild(PooPoo);
+   } 
     
-    
-
-
-  const remove = () => {
-    //Removes created list elements
-    $("li").remove();
-
-  }
+}
+const remove = () => {
+  //Removes created list elements
+  $("li").remove();
+}
